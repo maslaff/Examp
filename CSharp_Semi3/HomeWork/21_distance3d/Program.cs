@@ -20,6 +20,7 @@ point3d requestPoint3d(string msg)
     point.y = Convert.ToInt32(Console.ReadLine());
     Console.Write("Z: ");
     point.z = Convert.ToInt32(Console.ReadLine());
+    Console.Write("\n");
     return point;
 }
 
