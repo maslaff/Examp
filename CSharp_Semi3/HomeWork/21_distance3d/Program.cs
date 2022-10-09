@@ -3,27 +3,27 @@
 // A (3,6,8); B(2, 1, -7), -> 15.84
 // A(7, -5, 0); B(1, -1, 9)-> 11.53
 
-point2d a;
-point2d b;
-
-a.x = requestInt($"Ввод Ax");
-a.y = requestInt($"Ввод Ay");
-a.z = requestInt($"Ввод Az");
-b.x = requestInt($"Ввод Bx");
-b.y = requestInt($"Ввод By");
-b.z = requestInt($"Ввод Bz");
+point3d a = requestPoint3d($"Ввод A");
+point3d b = requestPoint3d($"Ввод B");
 
 double dist = Math.Sqrt(Math.Pow(a.x - b.x, 2) + Math.Pow(a.y - b.y, 2) + Math.Pow(a.z - b.z, 2));
 Console.WriteLine($"Расстояние между A и B = {dist - dist % 0.01}");
 
 
-int requestInt(string msg)
+point3d requestPoint3d(string msg)
 {
-    Console.Write(msg + ": ");
-    return Convert.ToInt32(Console.ReadLine());
+    point3d point;
+    Console.WriteLine(msg);
+    Console.Write("X: ");
+    point.x = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Y: ");
+    point.y = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Z: ");
+    point.z = Convert.ToInt32(Console.ReadLine());
+    return point;
 }
 
-public struct point2d
+public struct point3d
 {
     public int x;
     public int y;
