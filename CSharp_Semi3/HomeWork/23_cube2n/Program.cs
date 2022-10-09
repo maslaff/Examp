@@ -3,3 +3,8 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
+Console.Write($"Ввод числа: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 1; i <= n; i++) Console.Write($"{i * i * i}, ");
+Console.WriteLine();
