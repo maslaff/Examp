@@ -3,14 +3,14 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4-> 16
 
-int A = req("Ввод числа");
-int B = req("Ввод степени");
+int A = req("Число");
+int B = req("в степени");
 int acc = A;
 
 for (int i = 1; i < B; i++)
     acc *= A;
 
-Console.WriteLine(acc);
+Console.WriteLine($"= {acc}");
 
 int req(string msg)
 {
