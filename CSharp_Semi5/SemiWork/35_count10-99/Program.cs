@@ -5,7 +5,7 @@
 
 
 Random r = new Random();
-int len = 8;
+int len = 123;
 int count = 0;
 
 int[] arr = getArray(len);
