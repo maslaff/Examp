@@ -4,13 +4,13 @@
 // 1, -7, 567, 89, 223-> 3  *4. некорректный пример
 void countPositive()
 {
-    const int maxSize = 100;
+    const int maxSize = 5;
     int[] numArray = new int[maxSize];
     string input = "";
     int i = 0;
     int iGreatZero = 0;
     Console.WriteLine($"Введите до {maxSize} чисел. [end] для завершения");
-    while (i < maxSize)
+    while (true)
     {
         Console.Write($"Число {i + 1}: ");
         input = Console.ReadLine();
@@ -19,14 +19,14 @@ void countPositive()
         {
             numArray[i] = num;
             if (num > 0) iGreatZero++;
-            if (i++ >= maxSize) break;
+            if (++i >= maxSize) break;
         }
         else if (input == "end") break;
         else Console.WriteLine($"{input} не число");
     }
-    Console.WriteLine($"В массиве {printArray(numArray, i)} - {iGreatZero} положительных чисел");
+    Console.WriteLine($"В массиве чисел{printArray(numArray, i)} - {iGreatZero} положительных");
 }
-// countPositive();
+countPositive();
 
 
 // Тут есть что доработать, но чисто как вариант конецепции
@@ -63,7 +63,7 @@ void intersection()
         Console.WriteLine($"Пересечение в точке x={x}, y={y}");
     }
 }
-intersection();
+// intersection();
 
 
 // ------ Methods
