@@ -1,6 +1,27 @@
 ﻿// Задача 39: Напишите программу, которая перевернёт одномерный массив 
 // (последний элемент будет на первом месте, а первый - на последнем и т.д.) 
 // [1 2 3 4 5] -> [5 4 3 2 1][6 7 3 6] -> [6 3 7 6]
+void ReverseArray()
+{
+    int[] array = { 1, 2, 3, 4, 5, 6 };
+
+    int tmp = 0;
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        tmp = array[i];
+        array[i] = array[array.Length - 1 - i];
+        array[array.Length - 1 - i] = tmp;
+    }
+
+    // int[] targetArray = new int[array.Length];
+    // for (int i = 0; i < array.Length; i++)
+    //     targetArray[i] = array[array.Length - 1 - i];
+    // array = targetArray;
+
+    System.Console.WriteLine($"{IntArrayToString(array, array.Length)}");
+}
+ReverseArray();
+
 
 // Задача 40: Напишите программу, которая принимает на вход три числа и 
 // проверяет, может ли существовать треугольник с сторонами такой длины. 
@@ -52,7 +73,7 @@ int[] copyArray(int[] arr)
         arr2[i] = arr[i];
     return arr2;
 }
-printArray(copyArray(getArray(5, 1, 100)));
+// printArray(copyArray(getArray(5, 1, 100)));
 
 
 void printArray(int[] arr)
@@ -63,6 +84,13 @@ void printArray(int[] arr)
     Console.WriteLine($"]");
 }
 
+string IntArrayToString(int[] arr, int to)
+{
+    string str = $"[{arr[0]}";
+    for (int i = 1; i < to; i++)
+        str += $", {arr[i]}";
+    return str + ']';
+}
 
 int[] getArray(int len, int from, int to)
 {
