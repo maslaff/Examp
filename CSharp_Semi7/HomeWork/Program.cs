@@ -47,6 +47,7 @@ void FindAndPrint()
     int[,] intArray = Get2DIntArray(3, 4, 0, 10);
     int row = 0, col = 0;
     print2DArray(intArray);
+    Console.WriteLine("------------");
     Console.WriteLine(FindNumInArray(intArray, num, out row, out col)
                                 ? $"{num} в позиции: {row + 1},{col + 1}"
                                 : $"числа {num} в массиве нет"
@@ -77,7 +78,7 @@ void FindPosInArray()
     int row = 3;
     int col = 4;
     print2DArray(arr);
-    Console.WriteLine("---------");
+    Console.WriteLine("------------");
     if (row > arr.GetLength(0) || col > arr.GetLength(1))
         Console.WriteLine("такой позиции в массиве нет");
     else
