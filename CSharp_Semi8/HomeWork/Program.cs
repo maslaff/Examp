@@ -199,10 +199,30 @@ bool NumInArray(int num, int[] arr, int toPos)
 int sizeX = 4, sizeY = 4;
 int[,] arr = new int[sizeX, sizeY];
 
+int row = 0, col = 0;
+for (int num = 1; num <= sizeX * sizeY; num++)
+{
+    arr[row, col] = num;
+    if (row <= col + 1 && row + col < sizeY - 1) col++;
+    else if (row < col && row + col >= sizeX - 1) row++;
+    else if (row >= col && row + col > sizeY - 1) col--;
+    else row--;
+}
 
+for (int i = 0; i < sizeX; i++)
+{
+    for (int j = 0; j < sizeY; j++)
+    {
+        if (arr[i, j] < 10) Console.Write('0');
+        Console.Write($"{arr[i, j]} ");
+    }
+    Console.WriteLine();
+}
 
 #endif
 
+
+#if SortingArrayRows || FindMinSumRow || ProdMatrix
 // ------ Methods
 /// Даёт массив случайных целых чисел, от min до max, размером rows X cols.
 int[,] Get2DIntArray(int rows, int cols, int min = 1, int max = 9)
@@ -225,3 +245,5 @@ void Print2DArray(int[,] arr, char sep = ' ')
     }
     Console.WriteLine();
 }
+
+#endif
