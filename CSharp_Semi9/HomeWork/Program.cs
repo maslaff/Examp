@@ -63,31 +63,32 @@ int m = 2, n = 3;
 // int m = 3, n = 2;
 int acc = 0;
 int tab = 0;
+int spc = 8;
 Console.WriteLine($"A({m}, {n}) = {A(m, n)} :{acc}");
 int A(int m, int n)
 {
     acc++;
-    Console.SetCursorPosition(tab * 3, acc);
+    Console.SetCursorPosition(tab, acc);
     if (m == 0)
     {
-        tab--;
+        tab -= spc;
         Console.WriteLine($"{n + 1}");
         return n + 1;
     }
     if (m != 0 && n == 0)
     {
-        tab++;
-        Console.WriteLine($"A({m - 1}, 1)");
+        tab += spc / 2;
+        Console.WriteLine($"A({m - 1},1)");
         return A(m - 1, 1);
     }
     if (m > 0 && n > 0)
     {
-        tab++;
-        Console.WriteLine($"A({m - 1}, A({m}, {n - 1}))");
+        tab += spc;
+        Console.WriteLine($"A({m - 1}, A({m},{n - 1}))");
         return A(m - 1, A(m, n - 1));
     }
-    tab++;
-    Console.WriteLine($"** A({m}, {n})");
+    tab += spc;
+    Console.WriteLine($"** A({m},{n})");
     return A(m, n);
 }
 
